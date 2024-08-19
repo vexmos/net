@@ -1,0 +1,26 @@
+# ________________________________________________________________________________________________
+#
+#       ██╗░░░██╗███████╗██╗░░██╗███╗░░░███╗░█████╗░░██████╗
+#       ██║░░░██║██╔════╝╚██╗██╔╝████╗░████║██╔══██╗██╔════╝
+#       ╚██╗░██╔╝█████╗░░░╚███╔╝░██╔████╔██║██║░░██║╚█████╗░
+#       ░╚████╔╝░██╔══╝░░░██╔██╗░██║╚██╔╝██║██║░░██║░╚═══██╗
+#       ░░╚██╔╝░░███████╗██╔╝╚██╗██║░╚═╝░██║╚█████╔╝██████╔╝
+#       ░░░╚═╝░░░╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░╚════╝░╚═════╝░
+#
+# VexmosNET®, propriedade de Vexmos® e não afiliado à Mojang AB. Todos os direitos reservados © 2024.
+#
+# ________________________________________________________________________________________________
+#
+manutencao: false
+data: ''
+Proibido_manutencao: |-
+  &cO servidor está em manutenção desde %data%, aguarde alguns instantes.
+  &ePossui dúvidas? Acesse nosso discord:
+  &adiscord.vexmos.net
+Kickmessage: '&cO servidor entrou em manutenção, aguarde um pouco...'
+MOTD_manutencao:
+  line1: '        &6&lVexmos.net  &dMinecraft Network'
+  line2: '               &a&LEMERALD &c&L50% OFF'
+ManutencaoLista:
+  - nevesbr6
+  - thixgoo
