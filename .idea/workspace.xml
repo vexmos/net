@@ -4,42 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1876c154-f7c2-429f-9196-12303adba4e4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/Proxy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/api/BungeeConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/api/BungeeConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/AnuncioCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/AnuncioCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/BlockCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/BlockCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/ClearChatCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/ClearChatCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/CoinSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/CoinSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/Commands.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/CristalSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/CristalSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/GoCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/GoCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/GroupCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/GroupCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/KickCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/KickCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/MaintenanceCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/MaintenanceCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/PingCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/PingCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/ReplyCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/ReplyCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/StatsCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/StatsCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/TellCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/TellCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/listeners/Listeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/listeners/Listeners.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/tasks/AnuncioImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/tasks/AnuncioImplements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/TabListListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/TabListListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/VexmosNET.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/VexmosNET.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/bungee.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/bungee.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/listeners/server/TabListListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/listeners/server/TabListListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bungee.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bungee.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-    </list>
+    <list default="true" id="1876c154-f7c2-429f-9196-12303adba4e4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,21 +49,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "nevesbr6"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nevesbr6&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/vexmos/net.git",
-    "accountId": "508bbac7-1f62-40e8-8c93-0d76b4b56979"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/vexmos/net.git&quot;,
+    &quot;accountId&quot;: &quot;508bbac7-1f62-40e8-8c93-0d76b4b56979&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2ktI0jnVgfi92xwVolOW5E11zo8" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -107,18 +72,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Gradle.net [build].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/JOSE/Desktop/VEXMOS/github/hub"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Gradle.net [build].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/JOSE/Desktop/VEXMOS/github/hub&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="net [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
