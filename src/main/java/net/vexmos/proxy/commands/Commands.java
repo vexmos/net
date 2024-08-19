@@ -37,7 +37,7 @@ public abstract class Commands extends Command {
 
         ConnectBungee database = new ConnectBungee();
         new GroupCommand(database);
-        new PunishCommand(database);
+        //new PunishCommand(database);
     }
 
     public abstract void perform(CommandSender sender, String[] args) throws SQLException;
