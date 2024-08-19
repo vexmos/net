@@ -16,30 +16,20 @@ public class TabListListener implements Listener {
     }
 
     private void setTabList(Player player) {
-        String header = "§8\n" +  // Linha cinza escuro
-                "§8\n" +  // Linha cinza escuro
-                "          §6§lVEXMOS        \n" +  // Texto centralizado
-                "§8\n" +  // Linha cinza escuro
-                "  §eVocê está jogando em §6§lVEXMOS.NET \n" +  // Texto informativo
-                "§8\n" +  // Linha cinza escuro
-                "§8\n";  // Linha cinza escuro
+        String header =
+                "\n\n" + "§a§lVEXMOS" +
+                "\n" + "§7       www.vexmos.net" +
+                "\n" + "§7Acesse nossa loja, link logo abaixo:" +
+                "\n" + "§bLOJA.VEXMOS.NET" +
+                "\n\n";
 
-        String footer = "§8\n" +  // Linha cinza escuro
-                "§8\n" +  // Linha cinza escuro
-                "  §eSeu ping: §a" + getPing(player) + "  \n" +  // Ping do jogador
-                "  §eSala: §a" + Bukkit.getServer().getServerName() + "  \n" +  // Mundo do jogador
-                "§8\n" +  // Linha cinza escuro
-                "    §ewww.vexmos.net   \n" +  // Site
-                "    §8discord.vexmos.net   \n" +  // Discord
-                "    §8loja.vexmos.net   \n\n" +  // Loja
-                "    §eRedes Sociais:   \n" +  // Loja
-                "    §aIG: §b@VexmosMC  \n" +  // Instagram
-                "    §aTikTok: §b@VexmosMC  \n" +  // Tiktok
-                "§8\n" +  // Linha cinza escuro
-                "§8\n" +  // Linha cinza escuro
-                "  §7Vexmos© 2025  \n" +  // Direitos autorais
-                "§8\n" +  // Linha cinza escuro
-                "§8\n";  // Linha cinza escuro
+        String footer =
+                "\n\n" + "§7Comunidade:" +
+                "\n" + "§fDiscord: §bdiscord.vexmos.net" +
+                "\n" + "§fInstagram: §b@VexmosMC" +
+                "\n" + "§fTikTok: §b@VexmosMC" +
+                "\n" + "§fTwitter: §b@VexmosMC" +
+                "\n" + "§7©2025 Vexmos.net, Inc";
 
         // Enviar a tablist personalizada para o jogador
         TabListAPI.sendTabList(player, header, footer);
