@@ -13,7 +13,7 @@
 #
 name: VexmosNET
 version: 1.0-SNAPSHOT
-main: net.vexmos.bungee.Bungee
+main: net.vexmos.proxy.VexmosPROXY
 authors: [nevesbr6, spirit]
 description: © 2025 Vexmos, Inc.
 website: www.vexmos.net

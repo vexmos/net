@@ -18,18 +18,16 @@ public class TabListListener implements Listener {
     private void setTabList(Player player) {
         String header =
                 "\n\n" + "§a§lVEXMOS" +
-                "\n" + "§7       www.vexmos.net" +
-                "\n" + "§7Acesse nossa loja, link logo abaixo:" +
-                "\n" + "§bLOJA.VEXMOS.NET" +
+                "\n" + "§7     www.vexmos.net" +
                 "\n\n";
 
         String footer =
-                "\n\n" + "§7Comunidade:" +
-                "\n" + "§fDiscord: §bdiscord.vexmos.net" +
-                "\n" + "§fInstagram: §b@VexmosMC" +
-                "\n" + "§fTikTok: §b@VexmosMC" +
-                "\n" + "§fTwitter: §b@VexmosMC" +
-                "\n" + "§7©2025 Vexmos.net, Inc";
+                "\n\n" + "§bTikTok: §7@VexmosMC" +
+                "\n" + "§bInstagram: §7@VexmosMC" +
+                "\n" + "§bTwitter: §7@VexmosMC" +
+                "\n\n" + "§eNossa Comunidade: §adiscord.vexmos.net" +
+                "\n" + "                         §eAdquira VIP'S em: §aloja.vexmos.net                         " +
+                "\n\n";
 
         // Enviar a tablist personalizada para o jogador
         TabListAPI.sendTabList(player, header, footer);

@@ -13,7 +13,7 @@
 #
 name: VexmosNET
 version: 1.0
-main: net.vexmos.spigot.Services
+main: net.vexmos.spigot.VexmosNET
 authors: [nevesbr6, spirit]
 description: ©2025 Vexmos, Inc.
 website: www.vexmos.net
