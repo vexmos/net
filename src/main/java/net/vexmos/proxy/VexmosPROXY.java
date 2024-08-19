@@ -1,5 +1,6 @@
 package net.vexmos.proxy;
 
+import net.vexmos.proxy.api.PermissionAPI;
 import net.vexmos.proxy.commands.Commands;
 import net.vexmos.proxy.configs.Configs;
 import net.vexmos.proxy.listeners.MotdListener;
@@ -19,6 +20,7 @@ public class VexmosPROXY extends Plugin {
         AnuncioImplements.setup();
         getProxy().getPluginManager().registerListener(this, new MotdListener());
         new Configs();
+        new PermissionAPI();
     }
 
     @Override
