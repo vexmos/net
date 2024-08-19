@@ -1,6 +1,6 @@
 package net.vexmos.spigot.api;
 
-import net.vexmos.spigot.Services;
+import net.vexmos.spigot.VexmosNET;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionAttachment;
@@ -19,7 +19,7 @@ public class PermissionConfig {
     }
 
     public static void removeAllPermissionsFromPlayer(Player player) {
-        PermissionAttachment attachment = player.addAttachment(Services.get());
+        PermissionAttachment attachment = player.addAttachment(VexmosNET.get());
         Map<String, Boolean> permissions = attachment.getPermissions();
         Set<String> permKeys = permissions.keySet();
         for (String perm : permKeys) {

@@ -1,0 +1,27 @@
+# ________________________________________________________________________________________________
+#
+#       ██╗░░░██╗███████╗██╗░░██╗███╗░░░███╗░█████╗░░██████╗
+#       ██║░░░██║██╔════╝╚██╗██╔╝████╗░████║██╔══██╗██╔════╝
+#       ╚██╗░██╔╝█████╗░░░╚███╔╝░██╔████╔██║██║░░██║╚█████╗░
+#       ░╚████╔╝░██╔══╝░░░██╔██╗░██║╚██╔╝██║██║░░██║░╚═══██╗
+#       ░░╚██╔╝░░███████╗██╔╝╚██╗██║░╚═╝░██║╚█████╔╝██████╔╝
+#       ░░░╚═╝░░░╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░╚════╝░╚═════╝░
+#
+# VexmosNET®, propriedade de Vexmos® e não afiliado à Mojang AB. Todos os direitos reservados © 2024.
+#
+# ________________________________________________________________________________________________
+#
+prefix-anuncios: '&8» '
+cooldown-anuncios: 35
+anuncios:
+  - '&6Não compartilhe sua senha com terceiros. &eEsteja atualizado em relação à medidas de segurança em &bvexmos.net/seguranca'
+  - '&eTá afim de ficar por dentro de tudo? Entre em nosso discord: &bdiscord.vexmos.net'
+  - '&eAlguém está te incomodando? Use &b/block <jogador>'
+  - '&eEvite ser punido, verifique as diretrizes do nosso servidor. Use &b/diretrizes'
+  - '&eQuer se destacar? Adquira nossos pacotes VIP e aproveite benefícios exclusivos em &bshop.vexmos.net'
+  - '&6Dobre suas recompensas e acelere seu progresso! Compre moedas em &bshop.vexmos.net'
+  - '&eCurioso sobre seu desempenho? Use &b/stats &epara ver suas estatísticas detalhadas!'
+  - '&eQuer reportar um jogador infrator? Utilize &b/report &epara ser ouvido!'
+  - '&eLembre-se de resgatar diariamente recompensas incríveis! Use &b/claim &epara receber.'
+  - '&6Fique de olho em eventos especiais e ganhe prêmios únicos! Use &b/eventos &6para mais informações.'
+

@@ -1,6 +1,6 @@
 package net.vexmos.spigot.api;
 
-import net.vexmos.spigot.Services;
+import net.vexmos.spigot.VexmosNET;
 import net.minecraft.server.v1_8_R3.EntityWither;
 import net.minecraft.server.v1_8_R3.PacketPlayOutSpawnEntityLiving;
 import net.minecraft.server.v1_8_R3.PacketPlayOutEntityDestroy;
@@ -37,7 +37,7 @@ public class BossBarAPI {
 		int entityId = wither.getId();
 		activeBossBars.put(player.getUniqueId(), entityId);
 
-		Bukkit.getScheduler().runTaskLater(Services.get(), () -> {
+		Bukkit.getScheduler().runTaskLater(VexmosNET.get(), () -> {
 			if (activeBossBars.containsKey(player.getUniqueId())) {
 				removeBossbar(player);
 			}

@@ -1,6 +1,6 @@
 package net.vexmos.spigot.api;
 
-import net.vexmos.spigot.Services;
+import net.vexmos.spigot.VexmosNET;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -16,7 +16,7 @@ public class SpigotConfig {
 
 
     public SpigotConfig(String name) {
-        file = new File(Services.get().getDataFolder(), name);
+        file = new File(VexmosNET.get().getDataFolder(), name);
         reloadConfig();
     }
 
@@ -33,7 +33,7 @@ public class SpigotConfig {
     public void reloadConfig() {
 
         config = YamlConfiguration.loadConfiguration(file);
-        InputStream imputStream = Services.get().getResource(file.getName());
+        InputStream imputStream = VexmosNET.get().getResource(file.getName());
         if (imputStream != null) {
             YamlConfiguration imputConfig =
                     YamlConfiguration.loadConfiguration(imputStream);
@@ -57,7 +57,7 @@ public class SpigotConfig {
 
     public void saveDefaultConfig() {
         if (!file.exists()) {
-            Services.get().saveResource(file.getName(), false);
+            VexmosNET.get().saveResource(file.getName(), false);
         }
     }
 

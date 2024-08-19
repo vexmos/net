@@ -1,0 +1,36 @@
+# ________________________________________________________________________________________________
+#
+#       ██╗░░░██╗███████╗██╗░░██╗███╗░░░███╗░█████╗░░██████╗
+#       ██║░░░██║██╔════╝╚██╗██╔╝████╗░████║██╔══██╗██╔════╝
+#       ╚██╗░██╔╝█████╗░░░╚███╔╝░██╔████╔██║██║░░██║╚█████╗░
+#       ░╚████╔╝░██╔══╝░░░██╔██╗░██║╚██╔╝██║██║░░██║░╚═══██╗
+#       ░░╚██╔╝░░███████╗██╔╝╚██╗██║░╚═╝░██║╚█████╔╝██████╔╝
+#       ░░░╚═╝░░░╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░╚════╝░╚═════╝░
+#
+# VexmosNET®, propriedade de Vexmos® e não afiliado à Mojang AB. Todos os direitos reservados © 2024.
+#
+# ________________________________________________________________________________________________
+#
+permissions:
+  diretor:
+    - "group.diretor"
+    - "npcmanager.commands.npc"
+  admin:
+    - "group.admin"
+  dev:
+    - "group.dev"
+    - "npcmanager.commands.npc"
+  construtor:
+    - "group.construtor"
+  mod:
+    - "group.mod"
+  suporte:
+    - "group.suporte"
+  emerald:
+    - "group.emerald"
+  diamond:
+    - "group.diamond"
+  gold:
+    - "group.gold"
+  membro:
+    - "group.membro"

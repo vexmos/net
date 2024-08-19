@@ -1,9 +1,8 @@
 
-/*
-package com.lunikmc.spigot.listeners;
+package net.vexmos.spigot.listeners;
 
-import spigot.net.vexmos.Spigot;
-import api.spigot.net.vexmos.SpigotConfig;
+import net.vexmos.spigot.VexmosNET;
+import net.vexmos.spigot.api.SpigotConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -67,9 +66,8 @@ public class AFKListener implements Listener {
             public void run() {
                 checkAFK();
             }
-        }.runTaskTimer(Spigot.get(), 0, 20); // Run every 20 ticks (1 second)
+        }.runTaskTimer(VexmosNET.get(), 0, 20); // Run every 20 ticks (1 second)
     }
 }
 
 
- */

@@ -1,7 +1,7 @@
 package net.vexmos.spigot.listeners;
 
 import net.vexmos.database.spigot.ConnectSpigot;
-import net.vexmos.spigot.Services;
+import net.vexmos.spigot.VexmosNET;
 import net.vexmos.spigot.listeners.player.messages.*;
 import net.vexmos.spigot.listeners.server.ExploitPreventionListener;
 import net.vexmos.spigot.listeners.server.PacketListener;
@@ -12,26 +12,26 @@ import org.bukkit.event.Listener;
 public class Listeners implements Listener {
 
     public static void setup() {
-        Services.get().getServer().getPluginManager().registerEvents(new TitlesListener(), Services.get());
-        Services.get().getServer().getPluginManager().registerEvents(new WeatherListener(), Services.get());
-        Services.get().getServer().getPluginManager().registerEvents(new JoinListener(), Services.get());
-        Services.get().getServer().getPluginManager().registerEvents(new TabListListener(), Services.get());
-        Services.get().getServer().getPluginManager().registerEvents(new DeathMessage(), Services.get());
+        VexmosNET.get().getServer().getPluginManager().registerEvents(new TitlesListener(), VexmosNET.get());
+        VexmosNET.get().getServer().getPluginManager().registerEvents(new WeatherListener(), VexmosNET.get());
+        VexmosNET.get().getServer().getPluginManager().registerEvents(new JoinListener(), VexmosNET.get());
+        VexmosNET.get().getServer().getPluginManager().registerEvents(new TabListListener(), VexmosNET.get());
+        VexmosNET.get().getServer().getPluginManager().registerEvents(new DeathMessage(), VexmosNET.get());
         ConnectSpigot database = new ConnectSpigot();
-        //Spigot.get().getServer().getPluginManager().registerEvents(new ExcludeListener(), Spigot.get());
         // Criar uma instância do ChatListener
         ChatListener chatListener = new ChatListener();
-        Services.get().getServer().getPluginManager().registerEvents(chatListener, Services.get());
+        VexmosNET.get().getServer().getPluginManager().registerEvents(chatListener, VexmosNET.get());
 
-        Services.get().getServer().getPluginManager().registerEvents(new PlayerUpdateListener(Services.get(), new ConnectSpigot()), Services.get());
+        VexmosNET.get().getServer().getPluginManager().registerEvents(new PlayerUpdateListener(VexmosNET.get(), new ConnectSpigot()), VexmosNET.get());
 
         // Registrar outros listeners
-        Services.get().getServer().getPluginManager().registerEvents(new ExploitPreventionListener(), Services.get());
-        Services.get().getServer().getPluginManager().registerEvents(new FoodListener(), Services.get());
+        VexmosNET.get().getServer().getPluginManager().registerEvents(new ExploitPreventionListener(), VexmosNET.get());
+        VexmosNET.get().getServer().getPluginManager().registerEvents(new FoodListener(), VexmosNET.get());
+
         //Spigot.get().getServer().getPluginManager().registerEvents(new AFKListener(), Spigot.get());
 
 
         // Registrar PacketListener
-        Services.get().getServer().getMessenger().registerIncomingPluginChannel(Services.get(), "COMMENT", new PacketListener());
+        VexmosNET.get().getServer().getMessenger().registerIncomingPluginChannel(VexmosNET.get(), "COMMENT", new PacketListener());
     }
 }

@@ -1,7 +1,7 @@
 package net.vexmos.spigot.listeners;
 
 import net.vexmos.database.spigot.ConnectSpigot;
-import net.vexmos.spigot.Services;
+import net.vexmos.spigot.VexmosNET;
 import net.vexmos.spigot.api.BossBarAPI;
 import net.vexmos.spigot.api.PermissionConfig;
 import org.bukkit.Bukkit;
@@ -80,7 +80,7 @@ public class PlayerUpdateListener implements Listener {
             return;
         }
         for (String permission : permissions) {
-            player.addAttachment(Services.get(), permission, true);
+            player.addAttachment(VexmosNET.get(), permission, true);
         }
 
 

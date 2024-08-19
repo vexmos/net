@@ -1,7 +1,7 @@
     package net.vexmos.database.bungee;
 
-    import net.vexmos.bungee.api.BungeeConfig;
-    import net.vexmos.bungee.api.PermissionAPI;
+    import net.vexmos.proxy.api.BungeeConfig;
+    import net.vexmos.proxy.api.PermissionAPI;
     import net.md_5.bungee.api.ProxyServer;
     import net.md_5.bungee.api.connection.ProxiedPlayer;
 

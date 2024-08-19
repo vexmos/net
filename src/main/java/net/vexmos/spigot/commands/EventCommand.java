@@ -1,6 +1,6 @@
 package net.vexmos.spigot.commands;
 
-import net.vexmos.spigot.Services;
+import net.vexmos.spigot.VexmosNET;
 import net.vexmos.spigot.api.SpigotConfig;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.config.ServerInfo;
@@ -34,7 +34,7 @@ public class EventCommand extends Commands implements Listener {
         eventosConfig.saveDefaultConfig();
 
         // Register the event listener
-        Bukkit.getPluginManager().registerEvents(this, Services.get());
+        Bukkit.getPluginManager().registerEvents(this, VexmosNET.get());
     }
 
     private static final List<String> REQUIRED_PERMISSIONS = Arrays.asList(
