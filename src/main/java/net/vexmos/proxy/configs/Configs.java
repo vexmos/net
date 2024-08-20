@@ -4,7 +4,7 @@ public class Configs {
 
     public Configs(){
         TwitterConfig.setup();
-
+        PermissionConfig.setup();
     }
 
 }

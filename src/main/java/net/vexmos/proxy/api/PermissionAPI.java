@@ -25,8 +25,8 @@ public class PermissionAPI implements Listener {
     public Set<String> getPermissions(ProxiedPlayer player) {
         Set<String> permissions = new HashSet<>();
         String group = getGroup(player);
-        if (group != null && this.config.getConfig().getSection("permissions").contains(group))
-            permissions.addAll(this.config.getConfig().getStringList("permissions." + group));
+        if (group != null && this.config.getConfig().getSection("permissions").contains(group.toString()))
+            permissions.addAll(this.config.getConfig().getStringList("permissions." + group.toString()));
         return permissions;
     }
 
@@ -45,10 +45,10 @@ public class PermissionAPI implements Listener {
     }
 
     public void onPlayerJoin(ProxiedPlayer player) {
-        Set<String> currentPermissions = getInstance().getPermissions(player);
+        Set<String> currentPermissions = getPermissions(player);
         for (String permission : currentPermissions)
             player.setPermission(permission, false);
-        Set<String> newPermissions = getInstance().getPermissions(player);
+        Set<String> newPermissions = getPermissions(player);
         for (String permission : newPermissions)
             player.setPermission(permission, true);
     }

@@ -8,8 +8,8 @@ public class TwitterConfig {
     public static BungeeConfig twitter = new BungeeConfig("twitterAPI.yml");
 
     public static void setup(){
-        twitter.saveConfig();
         new TwitterAPI();
+        twitter.saveConfig();
     }
 
 }

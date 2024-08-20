@@ -5,9 +5,10 @@ import net.vexmos.proxy.api.PermissionAPI;
 
 public class Listeners {
 
-    public Listeners(){
+    public static void setup(){
         VexmosPROXY.get().getProxy().getPluginManager().registerListener(VexmosPROXY.get(), new MotdListener());
         VexmosPROXY.get().getProxy().getPluginManager().registerListener(VexmosPROXY.get(), new PermissionAPI());
+
     }
 
 }

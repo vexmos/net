@@ -1,0 +1,444 @@
+<changelist name="Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]" date="1724104884774" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 19/08/2024 19:01 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/ClearChatCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/ClearChatCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ClearChatCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/file-system.probe" />
+    <option name="AFTER_PATH" value=".gradle/file-system.probe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/file-system.probe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/messages/JoinListener.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/messages/JoinListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/JoinListener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/PlayerUpdateListener.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/PlayerUpdateListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/PlayerUpdateListener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/configs/TwitterConfig.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/configs/TwitterConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/TwitterConfig.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/messages/ChatListener.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/messages/ChatListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ChatListener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/listeners/MotdListener.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/listeners/MotdListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/MotdListener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/tasks/AnuncioTask.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/tasks/AnuncioTask.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/AnuncioTask.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/configs/PermissionsConfig.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/configs/PermissionsConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/PermissionsConfig.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/Commands.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/Commands.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/Commands.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/tasks/AnuncioImplements.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/tasks/AnuncioImplements.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/AnuncioImplements.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/systems/skins/cmd/SkinCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/systems/skins/cmd/SkinCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/SkinCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/api/TabListAPI.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/api/TabListAPI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/TabListAPI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.5/checksums/checksums.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.5/checksums/checksums.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/checksums.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/AFKListener.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/AFKListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/AFKListener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/ReportCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/ReportCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ReportCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/CoinSystem.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/CoinSystem.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/CoinSystem.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/PingCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/PingCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/PingCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/database/bungee/ConnectBungee.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/database/bungee/ConnectBungee.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ConnectBungee.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/api/PermissionAPI.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/api/PermissionAPI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/PermissionAPI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/api/NameTagAPI.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/api/NameTagAPI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/NameTagAPI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.5/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.5/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/api/BossBarAPI.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/api/BossBarAPI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/BossBarAPI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/server/ExploitPreventionListener.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/server/ExploitPreventionListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ExploitPreventionListener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/server/PacketListener.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/server/PacketListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/PacketListener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/api/TitleAPI.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/api/TitleAPI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/TitleAPI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/server/CrashListener.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/server/CrashListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/CrashListener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/systems/skins/database/MySQLDatabase.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/systems/skins/database/MySQLDatabase.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/MySQLDatabase.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/systems/skins/database/Database.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/systems/skins/database/Database.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/Database.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/gamerules/DoDayLightCycle.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/gamerules/DoDayLightCycle.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/DoDayLightCycle.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/database/spigot/ConnectSpigot.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/database/spigot/ConnectSpigot.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ConnectSpigot.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI$ImageData.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI$ImageData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ImageHandlerAPI$ImageData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/PunishCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/PunishCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/PunishCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/api/PermissionConfig.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/api/PermissionConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/PermissionConfig.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.5/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value=".gradle/8.5/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/SystemCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/SystemCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/SystemCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/utils/TimeUtils.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/utils/TimeUtils.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/TimeUtils.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.5/fileHashes/resourceHashesCache.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.5/fileHashes/resourceHashesCache.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/resourceHashesCache.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/server/WeatherListener.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/server/WeatherListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/WeatherListener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/TpCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/TpCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/TpCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/messages/FoodListener.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/messages/FoodListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/FoodListener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI$ImageMapRenderer.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI$ImageMapRenderer.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ImageHandlerAPI$ImageMapRenderer.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/EventCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/EventCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/EventCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/messages/TitlesListener.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/messages/TitlesListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/TitlesListener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/api/SpigotConfig.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/api/SpigotConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/SpigotConfig.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/AnuncioCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/AnuncioCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/AnuncioCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/gamerules/GameRules.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/gamerules/GameRules.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/GameRules.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/api/ActionBarAPI.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/api/ActionBarAPI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ActionBarAPI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.5/checksums/sha1-checksums.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.5/checksums/sha1-checksums.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/sha1-checksums.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/PosCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/PosCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/PosCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/database/SetupDatabases.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/database/SetupDatabases.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/SetupDatabases.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/api/player/PingAPI.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/api/player/PingAPI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/PingAPI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/libs/VexmosNET.jar" />
+    <option name="AFTER_PATH" value="build/libs/VexmosNET.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/VexmosNET.jar" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/StatsCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/StatsCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/StatsCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/CristalSystem.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/CristalSystem.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/CristalSystem.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/BlockCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/BlockCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/BlockCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.5/checksums/md5-checksums.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.5/checksums/md5-checksums.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/md5-checksums.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/GroupCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/GroupCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/GroupCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/GameModeCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/GameModeCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/GameModeCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/TellCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/TellCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/TellCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/server/TabListListener.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/server/TabListListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/TabListListener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/ReplyCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/ReplyCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ReplyCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI$1.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ImageHandlerAPI$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/FlyCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/FlyCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/FlyCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.5/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.5/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="AFTER_PATH" value="build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/previous-compilation-data.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/listeners/Listeners.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/listeners/Listeners.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/Listeners.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/8.5/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value=".gradle/8.5/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/executionHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/KickCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/KickCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/KickCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/api/TwitterAPI.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/api/TwitterAPI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/TwitterAPI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/MaintenanceCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/MaintenanceCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/MaintenanceCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/GoCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/commands/GoCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/GoCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/ChatCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/ChatCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ChatCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/TagsCommand.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/TagsCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/TagsCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/outputFiles.bin" />
+    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/outputFiles.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/outputFiles.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/Commands.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/commands/Commands.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/Commands1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/VexmosPROXY.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/VexmosPROXY.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/VexmosPROXY.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/api/BungeeConfig.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/api/BungeeConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/BungeeConfig.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/messages/DeathMessage.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/player/messages/DeathMessage.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/DeathMessage.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ImageHandlerAPI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/VexmosNET.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/VexmosNET.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/VexmosNET.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/AFKListener$1.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/AFKListener$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/AFKListener$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/Listeners.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/Listeners.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/Listeners1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/utils/StringUtils.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/utils/StringUtils.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/StringUtils.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/server/ExploitPreventionListener$1.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/spigot/listeners/server/ExploitPreventionListener$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/ExploitPreventionListener$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/configs/Configs.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/configs/Configs.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/Configs.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/net/vexmos/proxy/listeners/PermissionListener.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/net/vexmos/proxy/listeners/PermissionListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_08_2024_19_01_[Changes]/PermissionListener.class" />
+  </binary>
+</changelist>

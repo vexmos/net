@@ -53,6 +53,8 @@ public class GroupCommand extends Commands {
         return groupMap.getOrDefault(group, "membro");
     }
 
+
+
     @Override
     public void perform(CommandSender sender, String[] args) {
         if (!hasRequiredPermission(sender)) {

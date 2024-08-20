@@ -3,7 +3,7 @@ package net.vexmos.proxy;
 import net.vexmos.proxy.api.PermissionAPI;
 import net.vexmos.proxy.commands.Commands;
 import net.vexmos.proxy.configs.Configs;
-import net.vexmos.proxy.listeners.MotdListener;
+import net.vexmos.proxy.listeners.Listeners;
 import net.vexmos.proxy.tasks.AnuncioImplements;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -16,9 +16,8 @@ public class VexmosPROXY extends Plugin {
     public void onEnable() {
         Commands.setup();
         new ConnectBungee();
-        new MotdListener();
+        Listeners.setup();
         AnuncioImplements.setup();
-        getProxy().getPluginManager().registerListener(this, new MotdListener());
         new Configs();
         new PermissionAPI();
     }

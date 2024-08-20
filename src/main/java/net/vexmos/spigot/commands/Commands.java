@@ -34,12 +34,12 @@ public abstract class Commands extends Command {
         // Register command with name and aliases
         try {
             SimpleCommandMap scm = (SimpleCommandMap) Bukkit.getServer().getClass().getDeclaredMethod("getCommandMap").invoke(Bukkit.getServer());
-            scm.register("LunikSystem", this); // Registers the main command
+            scm.register("VexmosNET", this); // Registers the main command
 
             // Register aliases
             if (aliases != null && aliases.length > 0) {
                 for (String alias : aliases) {
-                    scm.register(alias, "luniksystem", this);
+                    scm.register(alias, "vexmosnet", this);
                 }
             }
         } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException e) {

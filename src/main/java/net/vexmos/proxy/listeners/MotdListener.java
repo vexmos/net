@@ -6,13 +6,6 @@ import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 import net.vexmos.proxy.api.BungeeConfig;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.util.Arrays;
-
 public class MotdListener implements Listener {
 
     private BungeeConfig config;
@@ -22,6 +15,9 @@ public class MotdListener implements Listener {
         config = new BungeeConfig("motd.yml");
         maintenanceConfig = new BungeeConfig("manutencao.yml");
         config.saveDefault();
+        config.saveDefaultConfig();
+        maintenanceConfig.saveDefault();
+        maintenanceConfig.saveDefaultConfig();
     }
 
     @SuppressWarnings("deprecation")
@@ -36,8 +32,6 @@ public class MotdListener implements Listener {
         String motd;
         if (isMaintenance) {
             ping.getVersion().setName("§cX " + ping.getVersion().getName());
-            byte[] faviconBytes = getOfflineFaviconBytes(); // método para gerar o favicon offline
-            ping.setFavicon(Arrays.toString(faviconBytes));
             motd = maintenanceConfig.getConfig().getString("MOTD_manutencao.line1") + "\n" +
                     maintenanceConfig.getConfig().getString("MOTD_manutencao.line2").replace("%data%", maintenanceConfig.getConfig().getString("data"));
         } else {
@@ -50,21 +44,4 @@ public class MotdListener implements Listener {
         event.getResponse().setDescription(motd);
     }
 
-    private byte[] getOfflineFaviconBytes() {
-        // Gerar um favicon offline (um "X" vermelho, por exemplo)
-        BufferedImage faviconImage = new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D graphics = faviconImage.createGraphics();
-        graphics.setColor(Color.RED);
-        graphics.setFont(new Font("Arial", Font.BOLD, 48));
-        graphics.drawString("X", 20, 40);
-        graphics.dispose();
-
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        try {
-            ImageIO.write(faviconImage, "PNG", bos);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return bos.toByteArray();
-    }
 }

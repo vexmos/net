@@ -1,0 +1,340 @@
+Index: src/main/java/net/vexmos/proxy/listeners/MotdListener.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package net.vexmos.proxy.listeners;\r\n\r\nimport net.md_5.bungee.api.ServerPing;\r\nimport net.md_5.bungee.api.event.ProxyPingEvent;\r\nimport net.md_5.bungee.api.plugin.Listener;\r\nimport net.md_5.bungee.event.EventHandler;\r\nimport net.vexmos.proxy.api.BungeeConfig;\r\n\r\nimport javax.imageio.ImageIO;\r\nimport java.awt.*;\r\nimport java.awt.image.BufferedImage;\r\nimport java.io.ByteArrayOutputStream;\r\nimport java.io.IOException;\r\nimport java.util.Arrays;\r\n\r\npublic class MotdListener implements Listener {\r\n\r\n    private BungeeConfig config;\r\n    private BungeeConfig maintenanceConfig;\r\n\r\n    public MotdListener() {\r\n        config = new BungeeConfig(\"motd.yml\");\r\n        maintenanceConfig = new BungeeConfig(\"manutencao.yml\");\r\n        config.saveDefault();\r\n    }\r\n\r\n    @SuppressWarnings(\"deprecation\")\r\n    @EventHandler\r\n    public void onProxyPing(ProxyPingEvent event) {\r\n        // Recarrega a configuração de manutenção antes de usá-la\r\n        ServerPing ping = event.getResponse();\r\n        maintenanceConfig.reloadConfig();\r\n\r\n        boolean isMaintenance = maintenanceConfig.getConfig().getBoolean(\"manutencao\");\r\n\r\n        String motd;\r\n        if (isMaintenance) {\r\n            ping.getVersion().setName(\"§cX \" + ping.getVersion().getName());\r\n            byte[] faviconBytes = getOfflineFaviconBytes(); // método para gerar o favicon offline\r\n            ping.setFavicon(Arrays.toString(faviconBytes));\r\n            motd = maintenanceConfig.getConfig().getString(\"MOTD_manutencao.line1\") + \"\\n\" +\r\n                    maintenanceConfig.getConfig().getString(\"MOTD_manutencao.line2\").replace(\"%data%\", maintenanceConfig.getConfig().getString(\"data\"));\r\n        } else {\r\n            motd = config.getConfig().getString(\"motd.line1\") + \"\\n\" +\r\n                    config.getConfig().getString(\"motd.line2\");\r\n        }\r\n\r\n        // & para cor e \\n para quebra de linha\r\n        motd = motd.replace(\"&\", \"§\").replace(\"\\\\n\", \"\\n\");\r\n        event.getResponse().setDescription(motd);\r\n    }\r\n\r\n    private byte[] getOfflineFaviconBytes() {\r\n        // Gerar um favicon offline (um \"X\" vermelho, por exemplo)\r\n        BufferedImage faviconImage = new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB);\r\n        Graphics2D graphics = faviconImage.createGraphics();\r\n        graphics.setColor(Color.RED);\r\n        graphics.setFont(new Font(\"Arial\", Font.BOLD, 48));\r\n        graphics.drawString(\"X\", 20, 40);\r\n        graphics.dispose();\r\n\r\n        ByteArrayOutputStream bos = new ByteArrayOutputStream();\r\n        try {\r\n            ImageIO.write(faviconImage, \"PNG\", bos);\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n        return bos.toByteArray();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/net/vexmos/proxy/listeners/MotdListener.java b/src/main/java/net/vexmos/proxy/listeners/MotdListener.java
+--- a/src/main/java/net/vexmos/proxy/listeners/MotdListener.java	(revision c03db1a3ea3df31f1d4a2be56081503755bf54a5)
++++ b/src/main/java/net/vexmos/proxy/listeners/MotdListener.java	(date 1724104879577)
+@@ -6,13 +6,6 @@
+ import net.md_5.bungee.event.EventHandler;
+ import net.vexmos.proxy.api.BungeeConfig;
+ 
+-import javax.imageio.ImageIO;
+-import java.awt.*;
+-import java.awt.image.BufferedImage;
+-import java.io.ByteArrayOutputStream;
+-import java.io.IOException;
+-import java.util.Arrays;
+-
+ public class MotdListener implements Listener {
+ 
+     private BungeeConfig config;
+@@ -36,8 +29,6 @@
+         String motd;
+         if (isMaintenance) {
+             ping.getVersion().setName("§cX " + ping.getVersion().getName());
+-            byte[] faviconBytes = getOfflineFaviconBytes(); // método para gerar o favicon offline
+-            ping.setFavicon(Arrays.toString(faviconBytes));
+             motd = maintenanceConfig.getConfig().getString("MOTD_manutencao.line1") + "\n" +
+                     maintenanceConfig.getConfig().getString("MOTD_manutencao.line2").replace("%data%", maintenanceConfig.getConfig().getString("data"));
+         } else {
+@@ -50,21 +41,4 @@
+         event.getResponse().setDescription(motd);
+     }
+ 
+-    private byte[] getOfflineFaviconBytes() {
+-        // Gerar um favicon offline (um "X" vermelho, por exemplo)
+-        BufferedImage faviconImage = new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB);
+-        Graphics2D graphics = faviconImage.createGraphics();
+-        graphics.setColor(Color.RED);
+-        graphics.setFont(new Font("Arial", Font.BOLD, 48));
+-        graphics.drawString("X", 20, 40);
+-        graphics.dispose();
+-
+-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+-        try {
+-            ImageIO.write(faviconImage, "PNG", bos);
+-        } catch (IOException e) {
+-            e.printStackTrace();
+-        }
+-        return bos.toByteArray();
+-    }
+ }
+\ No newline at end of file
+Index: src/main/java/net/vexmos/proxy/api/PermissionAPI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package net.vexmos.proxy.api;\r\n\r\nimport net.vexmos.database.bungee.ConnectBungee;\r\nimport net.md_5.bungee.api.connection.ProxiedPlayer;\r\nimport net.md_5.bungee.api.plugin.Listener;\r\nimport java.util.HashSet;\r\nimport java.util.Set;\r\n\r\npublic class PermissionAPI implements Listener {\r\n\r\n    /**\r\n     * Variável de instância\r\n     */\r\n    private static PermissionAPI instance;\r\n    /**\r\n     * Variável de conexão com Database do Proxy\r\n     */\r\n    private final ConnectBungee connectBungee;\r\n    /**\r\n     * Variável para retornar configuração de Permissões\r\n     * do Proxy.\r\n     */\r\n    private final BungeeConfig config;\r\n\r\n    /**\r\n     * Inicialização do PermissionAPI\r\n     */\r\n    public PermissionAPI() {\r\n        config = new BungeeConfig(\"permissions.yml\");\r\n        connectBungee = new ConnectBungee();\r\n    }\r\n\r\n    /**\r\n     * @return Cria instância do PermissionAPI\r\n     */\r\n    public static PermissionAPI getInstance() {\r\n        if (instance == null) {\r\n            instance = new PermissionAPI();\r\n        }\r\n        return instance;\r\n    }\r\n\r\n    /**\r\n     * Obtenha as permissões de um jogador com base em seu grupo.\r\n     *\r\n     * @param player o jogador\r\n     * @return um conjunto de permissões\r\n     */\r\n    public Set<String> getPermissions(ProxiedPlayer player) {\r\n        Set<String> permissions = new HashSet<>();\r\n        String group = getGroup(player);\r\n\r\n        if (group != null && config.getConfig().getSection(\"permissions\").contains(group)) {\r\n            permissions.addAll(config.getConfig().getStringList(\"permissions.\" + group));\r\n        }\r\n\r\n        return permissions;\r\n    }\r\n\r\n    /**\r\n     * Verifique se um jogador tem uma permissão específica.\r\n     *\r\n     * @param player Parametro para pegar o Jogador\r\n     * @param permission a permissão para verificar\r\n     * @return verdadeiro se o jogador tiver permissão, falso caso contrário\r\n     */\r\n    public boolean hasPermission(ProxiedPlayer player, String permission) {\r\n        return getPermissions(player).contains(permission);\r\n    }\r\n\r\n    /**\r\n     * Pega o grupo do player na Databse do Proxy\r\n     *\r\n     * @param player Parametro para pegar o Jogador\r\n     */\r\n    public String getGroup(ProxiedPlayer player) {\r\n        return connectBungee.getPlayerGroup(player.getName());\r\n    }\r\n\r\n    /**\r\n     * Reinicia a Configuração da PermissionAPI\r\n     */\r\n    public void reloadConfig() {\r\n        config.reloadConfig();\r\n    }\r\n\r\n    /**\r\n     * Seta o grupo do player na Databse do Proxy\r\n     *\r\n     * @param player Parametro para pegar o Jogador\r\n     * @param group Parametro para pegar o grupo que será inserido na\r\n     *              Database do Proxy para o Jogador\r\n     */\r\n    public void setGroup(ProxiedPlayer player, String group) {\r\n        connectBungee.setPlayerGroup(player.getName(), group);\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/net/vexmos/proxy/api/PermissionAPI.java b/src/main/java/net/vexmos/proxy/api/PermissionAPI.java
+--- a/src/main/java/net/vexmos/proxy/api/PermissionAPI.java	(revision c03db1a3ea3df31f1d4a2be56081503755bf54a5)
++++ b/src/main/java/net/vexmos/proxy/api/PermissionAPI.java	(date 1724104972111)
+@@ -6,7 +6,7 @@
+ import java.util.HashSet;
+ import java.util.Set;
+ 
+-public class PermissionAPI implements Listener {
++public class    PermissionAPI implements Listener {
+ 
+     /**
+      * Variável de instância
+Index: src/main/java/net/vexmos/proxy/commands/GroupCommand.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package net.vexmos.proxy.commands;\r\n\r\nimport net.vexmos.proxy.VexmosPROXY;\r\nimport net.vexmos.database.bungee.ConnectBungee;\r\nimport net.md_5.bungee.api.CommandSender;\r\nimport net.md_5.bungee.api.chat.TextComponent;\r\nimport net.md_5.bungee.api.connection.ProxiedPlayer;\r\n\r\nimport java.util.*;\r\n\r\npublic class GroupCommand extends Commands {\r\n\r\n    private final ConnectBungee database;\r\n    private final Map<String, String> groupMap;\r\n\r\n\r\n\r\n    public GroupCommand(ConnectBungee database) {\r\n        super(\"group\", \"grupos\");\r\n        this.database = database;\r\n        this.groupMap = new HashMap<>();\r\n        setupGroupMap();\r\n    }\r\n\r\n    private static final List<String> REQUIRED_PERMISSIONS = Arrays.asList(\r\n            \"group.diretor\", \"group.dev\"\r\n    );\r\n\r\n    private boolean hasRequiredPermission(CommandSender sender) {\r\n        for (String permission : REQUIRED_PERMISSIONS) {\r\n            if (sender.hasPermission(permission)) {\r\n                return true;\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n    private void setupGroupMap() {\r\n        groupMap.put(\"membro\", \"§7Membro\");\r\n        groupMap.put(\"diretor\", \"§4Diretor\");\r\n        groupMap.put(\"admin\", \"§cAdmin\");\r\n        groupMap.put(\"dev\", \"§aDev\");\r\n        groupMap.put(\"construtor\", \"§eConstrutores\");\r\n        groupMap.put(\"mod\", \"§5Mod\");\r\n        groupMap.put(\"emerald\", \"§aEmerald\");\r\n        groupMap.put(\"diamond\", \"§bDiamond\");\r\n        groupMap.put(\"gold\", \"§6Gold\");\r\n        groupMap.put(\"suporte\", \"§3Suporte\");\r\n    }\r\n\r\n    public String getPlayerGroup(ProxiedPlayer player) {\r\n        String group = database.getPlayerGroup(player.getName());\r\n        return groupMap.getOrDefault(group, \"membro\");\r\n    }\r\n\r\n    @Override\r\n    public void perform(CommandSender sender, String[] args) {\r\n        if (!hasRequiredPermission(sender)) {\r\n            sender.sendMessage(new TextComponent(\"§cVocê não tem permissão para isso.\"));\r\n            return;\r\n        }\r\n        if (args.length < 1) {\r\n            sender.sendMessage(new TextComponent(\"§cUso correto: /group <add/check> <jogador> [grupo]\"));\r\n            return;\r\n        }\r\n\r\n        String action = args[0].toLowerCase();\r\n\r\n        if (action.equals(\"add\")) {\r\n            if (args.length < 3) {\r\n                sender.sendMessage(new TextComponent(\"§cUso correto: /group add <jogador> <grupo>\"));\r\n                return;\r\n            }\r\n\r\n            String playerzinho = args[1];;\r\n            ProxiedPlayer target = VexmosPROXY.get().getProxy().getPlayer(args[1]);\r\n            String group = args[2].toLowerCase();\r\n\r\n            if (target == null) {\r\n                database.setPlayerGroup(playerzinho, group);\r\n                sender.sendMessage(new TextComponent(\"§cO jogador está offline, esteja ciente.\"));\r\n                sender.sendMessage(new TextComponent(\"§aO grupo de \" + playerzinho + \" foi atualizado para \" + groupMap.get(group) + \".\"));\r\n                return;\r\n            }\r\n\r\n            if (!groupMap.containsKey(group)) {\r\n                sender.sendMessage(new TextComponent(\"§cGrupo inválido. Grupos válidos: \" + String.join(\", \", groupMap.keySet())));\r\n                return;\r\n            }\r\n\r\n            database.setPlayerGroup(target.getName(), group);\r\n\r\n            target.sendMessage(new TextComponent(\"§eSeu grupo foi atualizado para \" + groupMap.get(group)));\r\n            sender.sendMessage(new TextComponent(\"§aO grupo de \" + target.getName() + \" foi atualizado para \" + groupMap.get(group) + \".\"));\r\n\r\n        } else if (action.equals(\"check\")) {\r\n            if (args.length < 2) {\r\n                sender.sendMessage(new TextComponent(\"§cUso correto: /group check <jogador>\"));\r\n                return;\r\n            }\r\n\r\n            ProxiedPlayer target = VexmosPROXY.get().getProxy().getPlayer(args[1]);\r\n            if (target == null) {\r\n                sender.sendMessage(new TextComponent(\"§cJogador não encontrado.\"));\r\n                return;\r\n            }\r\n\r\n            String group = database.getPlayerGroup(target.getName());\r\n\r\n            sender.sendMessage(new TextComponent(\"§aO grupo de \" + target.getName() + \" é \" + groupMap.getOrDefault(group, \"§7Membro\") + \".\"));\r\n\r\n        } else {\r\n            sender.sendMessage(new TextComponent(\"§cAção inválida. Use /group <add/check>\"));\r\n        }\r\n    }}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/net/vexmos/proxy/commands/GroupCommand.java b/src/main/java/net/vexmos/proxy/commands/GroupCommand.java
+--- a/src/main/java/net/vexmos/proxy/commands/GroupCommand.java	(revision c03db1a3ea3df31f1d4a2be56081503755bf54a5)
++++ b/src/main/java/net/vexmos/proxy/commands/GroupCommand.java	(date 1724121450720)
+@@ -53,6 +53,8 @@
+         return groupMap.getOrDefault(group, "membro");
+     }
+ 
++
++
+     @Override
+     public void perform(CommandSender sender, String[] args) {
+         if (!hasRequiredPermission(sender)) {
+Index: .idea/modules/net.main.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module version=\"4\">\r\n  <component name=\"FacetManager\">\r\n    <facet type=\"minecraft\" name=\"Minecraft\">\r\n      <configuration>\r\n        <autoDetectTypes>\r\n          <platformType>SPIGOT</platformType>\r\n          <platformType>WATERFALL</platformType>\r\n        </autoDetectTypes>\r\n        <projectReimportVersion>1</projectReimportVersion>\r\n      </configuration>\r\n    </facet>\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules/net.main.iml b/.idea/modules/net.main.iml
+--- a/.idea/modules/net.main.iml	(revision c03db1a3ea3df31f1d4a2be56081503755bf54a5)
++++ b/.idea/modules/net.main.iml	(date 1724104879583)
+@@ -11,4 +11,8 @@
+       </configuration>
+     </facet>
+   </component>
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
+ </module>
+\ No newline at end of file
+Index: .idea/modules/net.vexmos.net.main.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules/net.vexmos.net.main.iml b/.idea/modules/net.vexmos.net.main.iml
+new file mode 100644
+--- /dev/null	(date 1724104879592)
++++ b/.idea/modules/net.vexmos.net.main.iml	(date 1724104879592)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module version="4">
++  <component name="FacetManager">
++    <facet type="minecraft" name="Minecraft">
++      <configuration>
++        <autoDetectTypes>
++          <platformType>SPIGOT</platformType>
++          <platformType>WATERFALL</platformType>
++        </autoDetectTypes>
++        <projectReimportVersion>1</projectReimportVersion>
++      </configuration>
++    </facet>
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"1876c154-f7c2-429f-9196-12303adba4e4\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"ExternalProjectsManager\">\r\n    <system id=\"GRADLE\">\r\n      <state>\r\n        <task path=\"$PROJECT_DIR$\">\r\n          <activation />\r\n        </task>\r\n        <projects_view>\r\n          <tree_state>\r\n            <expand>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"net\" type=\"f1a62948:ProjectNode\" />\r\n              </path>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"net\" type=\"f1a62948:ProjectNode\" />\r\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\r\n              </path>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"net\" type=\"f1a62948:ProjectNode\" />\r\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\r\n                <item name=\"build\" type=\"c8890929:TasksNode$1\" />\r\n              </path>\r\n            </expand>\r\n            <select />\r\n          </tree_state>\r\n        </projects_view>\r\n      </state>\r\n    </system>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;nevesbr6&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/vexmos/net.git&quot;,\r\n    &quot;accountId&quot;: &quot;508bbac7-1f62-40e8-8c93-0d76b4b56979&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 1\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2ktI0jnVgfi92xwVolOW5E11zo8\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;Gradle.net [build].executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/JOSE/Desktop/VEXMOS/github/hub&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"net [build]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\r\n      <ExternalSystemSettings>\r\n        <option name=\"executionName\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\r\n        <option name=\"scriptParameters\" />\r\n        <option name=\"taskDescriptions\">\r\n          <list />\r\n        </option>\r\n        <option name=\"taskNames\">\r\n          <list>\r\n            <option value=\"build\" />\r\n          </list>\r\n        </option>\r\n        <option name=\"vmOptions\" />\r\n      </ExternalSystemSettings>\r\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\r\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\r\n      <DebugAllEnabled>false</DebugAllEnabled>\r\n      <RunAsTest>false</RunAsTest>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Gradle.net [build]\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"1876c154-f7c2-429f-9196-12303adba4e4\" name=\"Changes\" comment=\"\" />\r\n      <created>1724096224472</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1724096224472</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c03db1a3ea3df31f1d4a2be56081503755bf54a5)
++++ b/.idea/workspace.xml	(date 1724127966028)
+@@ -4,7 +4,107 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="1876c154-f7c2-429f-9196-12303adba4e4" name="Changes" comment="" />
++    <list default="true" id="1876c154-f7c2-429f-9196-12303adba4e4" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/modules/net.vexmos.net.main.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/md5-checksums.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/sha1-checksums.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/modules/net.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/net.main.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/database/SetupDatabases.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/database/SetupDatabases.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/database/bungee/ConnectBungee.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/database/bungee/ConnectBungee.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/database/spigot/ConnectSpigot.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/database/spigot/ConnectSpigot.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/VexmosPROXY.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/VexmosPROXY.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/api/BungeeConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/api/BungeeConfig.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/api/PermissionAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/api/PermissionAPI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/api/TwitterAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/api/TwitterAPI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/AnuncioCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/AnuncioCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/BlockCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/BlockCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/ClearChatCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/ClearChatCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/CoinSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/CoinSystem.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/Commands.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/CristalSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/CristalSystem.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/GoCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/GoCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/GroupCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/GroupCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/KickCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/KickCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/MaintenanceCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/MaintenanceCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/PingCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/PingCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/PunishCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/PunishCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/ReplyCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/ReplyCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/ReportCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/ReportCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/StatsCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/StatsCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/TellCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/TellCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/configs/Configs.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/configs/Configs.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/configs/PermissionsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/configs/PermissionsConfig.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/configs/TwitterConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/configs/TwitterConfig.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/listeners/Listeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/listeners/Listeners.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/listeners/MotdListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/listeners/MotdListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/listeners/PermissionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/listeners/PermissionListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/systems/skins/cmd/SkinCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/systems/skins/cmd/SkinCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/systems/skins/database/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/systems/skins/database/Database.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/systems/skins/database/MySQLDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/systems/skins/database/MySQLDatabase.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/tasks/AnuncioImplements.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/tasks/AnuncioImplements.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/tasks/AnuncioTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/tasks/AnuncioTask.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/VexmosNET.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/VexmosNET.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/ActionBarAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/ActionBarAPI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/BossBarAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/BossBarAPI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI$ImageData.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI$ImageData.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI$ImageMapRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI$ImageMapRenderer.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/ImageHandlerAPI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/NameTagAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/NameTagAPI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/PermissionConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/PermissionConfig.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/SpigotConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/SpigotConfig.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/TabListAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/TabListAPI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/TitleAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/TitleAPI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/player/PingAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/player/PingAPI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/ChatCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/ChatCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/Commands.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/EventCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/EventCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/FlyCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/FlyCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/GameModeCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/GameModeCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/PosCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/PosCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/SystemCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/SystemCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/TagsCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/TagsCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/TpCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/TpCommand.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/AFKListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/AFKListener$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/AFKListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/AFKListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/Listeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/Listeners.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/PlayerUpdateListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/PlayerUpdateListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/gamerules/DoDayLightCycle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/gamerules/DoDayLightCycle.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/gamerules/GameRules.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/gamerules/GameRules.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/ChatListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/ChatListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/DeathMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/DeathMessage.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/FoodListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/FoodListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/JoinListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/JoinListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/TitlesListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/TitlesListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/CrashListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/CrashListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/ExploitPreventionListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/ExploitPreventionListener$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/ExploitPreventionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/ExploitPreventionListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/PacketListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/PacketListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/TabListListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/TabListListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/WeatherListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/WeatherListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/utils/StringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/utils/StringUtils.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/utils/TimeUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/utils/TimeUtils.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/libs/VexmosNET.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/VexmosNET.jar" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/resources/main/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/plugin.yml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ChatListener.class.uniqueId2" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/NameTagAPI.class.uniqueId1" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/TagsCommand.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/TagsCommand.class.uniqueId0" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/proxy/api/PermissionAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/proxy/api/PermissionAPI.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/proxy/commands/GroupCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/proxy/commands/GroupCommand.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/proxy/listeners/MotdListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/proxy/listeners/MotdListener.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -48,6 +148,7 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+   &quot;lastFilter&quot;: {
+@@ -58,7 +159,7 @@
+   <component name="GithubPullRequestsUISettings">{
+   &quot;selectedUrlAndAccountId&quot;: {
+     &quot;url&quot;: &quot;https://github.com/vexmos/net.git&quot;,
+-    &quot;accountId&quot;: &quot;508bbac7-1f62-40e8-8c93-0d76b4b56979&quot;
++    &quot;accountId&quot;: &quot;da00730d-583a-40db-b5a4-e7e2e13b4969&quot;
+   }
+ }</component>
+   <component name="ProjectColorInfo">{
+@@ -81,7 +182,13 @@
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/JOSE/Desktop/VEXMOS/github/hub&quot;
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/JOSE/Desktop/VEXMOS/github/hub&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+ }</component>
+   <component name="RunManager">
+@@ -113,6 +220,14 @@
+       </list>
+     </recent_temporary>
+   </component>
++  <component name="SharedIndexes">
++    <attachedChunks>
++      <set>
++        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.300" />
++        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.300" />
++      </set>
++    </attachedChunks>
++  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -121,8 +236,15 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1724096224472</updated>
++      <workItem from="1724106880965" duration="33000" />
++      <workItem from="1724107076704" duration="348000" />
++      <workItem from="1724121388878" duration="786000" />
++      <workItem from="1724127961801" duration="5000" />
+     </task>
+     <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectModuleManager\">\r\n    <modules>\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/net.main.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/net.main.iml\" />\r\n    </modules>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+--- a/.idea/modules.xml	(revision c03db1a3ea3df31f1d4a2be56081503755bf54a5)
++++ b/.idea/modules.xml	(date 1724104884576)
+@@ -3,6 +3,7 @@
+   <component name="ProjectModuleManager">
+     <modules>
+       <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.main.iml" filepath="$PROJECT_DIR$/.idea/modules/net.main.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.vexmos.net.main.iml" filepath="$PROJECT_DIR$/.idea/modules/net.vexmos.net.main.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
