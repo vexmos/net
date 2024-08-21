@@ -17,7 +17,7 @@ public class TabListListener implements Listener {
 
     private void setTabList(Player player) {
         String header =
-                "\n\n" + "§a§lVEXMOS" +
+                "\n\n" + "§6§lVEXMOS" +
                 "\n" + "§7     www.vexmos.net" +
                 "\n\n";
 
@@ -25,8 +25,8 @@ public class TabListListener implements Listener {
                 "\n\n" + "§bTikTok: §7@VexmosMC" +
                 "\n" + "§bInstagram: §7@VexmosMC" +
                 "\n" + "§bTwitter: §7@VexmosMC" +
-                "\n\n" + "§eNossa Comunidade: §adiscord.vexmos.net" +
-                "\n" + "                         §eAdquira VIP'S em: §aloja.vexmos.net                         " +
+                "\n\n" + "§eNossa Comunidade: §6discord.vexmos.net" +
+                "\n" + "                         §eAdquira VIP'S em: §6loja.vexmos.net                         " +
                 "\n\n";
 
         // Enviar a tablist personalizada para o jogador

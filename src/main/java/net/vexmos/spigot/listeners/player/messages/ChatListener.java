@@ -33,7 +33,7 @@ public class ChatListener implements Listener {
     public void chatFormatter(AsyncPlayerChatEvent event) {
 
         Player player = event.getPlayer();
-
+        event.setCancelled(true);
         // Verificar se o chat está habilitado
         if (!chatEnabled && !player.hasPermission("system.cmd.chat")) {
             event.setCancelled(true);

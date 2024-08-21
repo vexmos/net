@@ -2,7 +2,6 @@ package net.vexmos.spigot.listeners;
 
 import net.vexmos.database.spigot.ConnectSpigot;
 import net.vexmos.spigot.VexmosNET;
-import net.vexmos.spigot.api.BossBarAPI;
 import net.vexmos.spigot.api.PermissionConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
@@ -22,7 +21,6 @@ public class PlayerUpdateListener implements Listener {
 
     private static ConnectSpigot database;
     private static PermissionConfig permissionConfig;
-    private BossBarAPI bossBarAPI;
     private final Map<Player, LinkedList<String>> playerMessages = new HashMap<>(); // To store last messages
 
     public PlayerUpdateListener(ConnectSpigot database) {

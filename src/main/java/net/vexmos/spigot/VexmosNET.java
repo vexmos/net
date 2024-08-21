@@ -1,11 +1,11 @@
 package net.vexmos.spigot;
 
-//import com.lunikmc.spigot.api.ImageHandlerAPI;
 import net.vexmos.database.SetupDatabases;
 import net.vexmos.spigot.api.ImageHandlerAPI;
 import net.vexmos.spigot.commands.Commands;
 import net.vexmos.spigot.listeners.Listeners;
 import net.vexmos.spigot.listeners.player.gamerules.GameRules;
+import net.vexmos.spigot.listeners.player.messages.TitlesListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,9 +20,9 @@ public final class VexmosNET extends JavaPlugin {
         Commands.setup();
         GameRules.setup();
         new SetupDatabases();
-        ImageHandlerAPI.setup();
+        new TitlesListener();
+        //ImageHandlerAPI.setup();
         Bukkit.getWorld("world").setTime(1000);
-
     }
 
     @Override

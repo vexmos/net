@@ -60,6 +60,7 @@ public abstract class Commands extends Command {
         new SystemCommand();
         //new NPCCommand();
         new TagsCommand();
+        new HologramaCommand();
     }
 
 }

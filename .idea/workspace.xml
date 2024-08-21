@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1876c154-f7c2-429f-9196-12303adba4e4" name="Changes" comment="fix all">
+    <list default="true" id="1876c154-f7c2-429f-9196-12303adba4e4" name="Changes" comment="fix Permissions">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/BossBar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/holograms/Hologram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/holograms/HologramApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/holograms/IHologram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/holograms/SingleLineHologram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/holograms/reflection/Reflection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/NPCLib.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/NPCLibOptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/api/NPC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/api/events/NPCHideEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/api/events/NPCInteractEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/api/events/NPCShowEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/api/skin/MineSkinFetcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/api/skin/Skin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/api/state/NPCAnimation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/api/state/NPCSlot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/api/state/NPCState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/api/utilities/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/hologram/Hologram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/listeners/ChunkListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/listeners/HandleMoveBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/listeners/PacketListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/listeners/PeriodicMoveListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/listeners/PlayerListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/listeners/PlayerMoveEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/metrics/NPCLibMetrics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/npc/utilities/MathUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/commands/HologramaCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" afterDir="false" />
@@ -15,41 +43,23 @@
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/database/bungee/ConnectBungee.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/database/bungee/ConnectBungee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/api/PermissionAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/api/PermissionAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/GroupCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/commands/GroupCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/configs/PermissionConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/proxy/configs/PermissionConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/PermissionConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/PermissionConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/VexmosNET.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/VexmosNET.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/api/BossBarAPI.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/commands/Commands.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/Listeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/Listeners.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/PlayerUpdateListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/PlayerUpdateListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/ChatListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/ChatListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/TitlesListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/player/messages/TitlesListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/TabListListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/vexmos/spigot/listeners/server/TabListListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/VexmosNET.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/VexmosNET.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/AnuncioCommand.class.uniqueId5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/AnuncioImplements.class.uniqueId4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/BlockCommand.class.uniqueId3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/BungeeConfig.class.uniqueId9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ClearChatCommand.class.uniqueId12" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/CoinSystem.class.uniqueId14" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Commands.class.uniqueId11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/CristalSystem.class.uniqueId13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GoCommand.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GroupCommand.class.uniqueId16" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/KickCommand.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Listeners.class.uniqueId15" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MaintenanceCommand.class.uniqueId17" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/PingCommand.class.uniqueId8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ReplyCommand.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/StatsCommand.class.uniqueId6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/TellCommand.class.uniqueId10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/VexmosPROXY.class.uniqueId7" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/database/bungee/ConnectBungee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/database/bungee/ConnectBungee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/proxy/api/PermissionAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/proxy/api/PermissionAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/proxy/commands/GroupCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/proxy/commands/GroupCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/proxy/configs/PermissionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/proxy/configs/PermissionConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/PermissionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/PermissionConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/VexmosNET.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/VexmosNET.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/api/BossBarAPI.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/commands/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/commands/Commands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/listeners/Listeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/listeners/Listeners.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/listeners/PlayerUpdateListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/listeners/PlayerUpdateListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/listeners/player/messages/ChatListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/listeners/player/messages/ChatListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/listeners/player/messages/TitlesListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/listeners/player/messages/TitlesListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/listeners/server/TabListListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/vexmos/spigot/listeners/server/TabListListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +140,11 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;Gradle.net [build].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -200,7 +214,13 @@
       <workItem from="1724127961801" duration="7652000" />
       <workItem from="1724185266232" duration="2167000" />
       <workItem from="1724190545711" duration="678000" />
-      <workItem from="1724200088112" duration="2388000" />
+      <workItem from="1724200088112" duration="2422000" />
+      <workItem from="1724204831714" duration="1767000" />
+      <workItem from="1724209284862" duration="1574000" />
+      <workItem from="1724211736290" duration="2821000" />
+      <workItem from="1724216186864" duration="4089000" />
+      <workItem from="1724257044556" duration="1615000" />
+      <workItem from="1724259024819" duration="1742000" />
     </task>
     <task id="LOCAL-00001" summary="fix all">
       <option name="closed" value="true" />
@@ -210,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724185244666</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix Permissions">
+      <option name="closed" value="true" />
+      <created>1724202522743</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1724202522743</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +258,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="fix all" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix all" />
+    <MESSAGE value="fix Permissions" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix Permissions" />
   </component>
 </project>
