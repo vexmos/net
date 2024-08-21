@@ -16,15 +16,20 @@ public class PermissionConfig {
     public PermissionConfig() {
         config = new SpigotConfig("permissions.yml");
         config.saveDefaultConfig();
+        config.saveDefault();
     }
 
     public static void removeAllPermissionsFromPlayer(Player player) {
         PermissionAttachment attachment = player.addAttachment(VexmosNET.get());
         Map<String, Boolean> permissions = attachment.getPermissions();
-        Set<String> permKeys = permissions.keySet();
-        for (String perm : permKeys) {
-            player.removeAttachment(attachment);
+
+        // Iterate through the permissions and set each to false
+        for (String perm : permissions.keySet()) {
+            attachment.setPermission(perm, false);
         }
+
+        // Remove the attachment after all permissions are set to false
+        player.removeAttachment(attachment);
     }
 
     public static List<String> getPermissions(String group) {

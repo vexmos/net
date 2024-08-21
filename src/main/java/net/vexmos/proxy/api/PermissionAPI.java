@@ -25,8 +25,8 @@ public class PermissionAPI implements Listener {
     public Set<String> getPermissions(ProxiedPlayer player) {
         Set<String> permissions = new HashSet<>();
         String group = getGroup(player);
-        if (group != null && this.config.getConfig().getSection("permissions").contains(group.toString()))
-            permissions.addAll(this.config.getConfig().getStringList("permissions." + group.toString()));
+        if (group != null && this.config.getConfig().getSection("permissions").contains(group))
+            permissions.addAll(this.config.getConfig().getStringList("permissions." + group));
         return permissions;
     }
 

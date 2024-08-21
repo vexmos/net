@@ -7,30 +7,31 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.lang.reflect.InvocationTargetException;
 
 public abstract class Commands extends Command {
 
 
-    private PlayerUpdateListener playerUpdateListener;
-    private static ConnectSpigot database;
+    ConnectSpigot database = new ConnectSpigot();
 
     @Override
     public boolean execute(CommandSender sender, String cmdLabel, String[] args){
+        if(sender instanceof Player){
+            PlayerUpdateListener update = new PlayerUpdateListener(database);
+            Player player = (Player) sender;
+            update.updatePlayerGroup(player);
+        }
         this.perform(sender, cmdLabel, args);
         return true;
     }
 
-    protected void updatePlayerGroup(Player player) {
-        playerUpdateListener.updatePlayerGroup(player);
-    }
 
     public abstract void perform(CommandSender sender, String label, String[] args);
 
     protected Commands(String name, String... aliases) {
         super(name);
-
         // Register command with name and aliases
         try {
             SimpleCommandMap scm = (SimpleCommandMap) Bukkit.getServer().getClass().getDeclaredMethod("getCommandMap").invoke(Bukkit.getServer());

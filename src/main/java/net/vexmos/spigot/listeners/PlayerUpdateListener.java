@@ -25,11 +25,11 @@ public class PlayerUpdateListener implements Listener {
     private BossBarAPI bossBarAPI;
     private final Map<Player, LinkedList<String>> playerMessages = new HashMap<>(); // To store last messages
 
-    public PlayerUpdateListener(JavaPlugin plugin, ConnectSpigot database) {
+    public PlayerUpdateListener(ConnectSpigot database) {
         this.database = database;
         permissionConfig = permissionConfig;
         this.permissionConfig = new PermissionConfig();
-        Bukkit.getServer().getPluginManager().registerEvents(this, plugin);
+        Bukkit.getServer().getPluginManager().registerEvents(this, VexmosNET.get());
     }
 
     @EventHandler
@@ -72,6 +72,8 @@ public class PlayerUpdateListener implements Listener {
         String firstPermission = permissions.get(0);
         if (player.hasPermission(firstPermission)) {
             return;
+        } else {
+            PermissionConfig.removeAllPermissionsFromPlayer(player);
         }
 
         PermissionConfig.removeAllPermissionsFromPlayer(player);

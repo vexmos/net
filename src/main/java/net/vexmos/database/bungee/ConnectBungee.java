@@ -4,6 +4,8 @@
     import net.vexmos.proxy.api.PermissionAPI;
     import net.md_5.bungee.api.ProxyServer;
     import net.md_5.bungee.api.connection.ProxiedPlayer;
+    import net.vexmos.spigot.api.PermissionConfig;
+    import org.bukkit.entity.Player;
 
     import java.sql.*;
     import java.util.Set;
@@ -234,6 +236,7 @@
         public void setPlayerGroup(String playerName, String group) {
             ProxiedPlayer player = ProxyServer.getInstance().getPlayer(playerName);
             if (player != null) {
+
                 // Remove todas as permissões atuais do jogador
                 Set<String> currentPermissions = PermissionAPI.getInstance().getPermissions(player);
                 for (String permission : currentPermissions) {

@@ -22,7 +22,7 @@ public class Listeners implements Listener {
         ChatListener chatListener = new ChatListener();
         VexmosNET.get().getServer().getPluginManager().registerEvents(chatListener, VexmosNET.get());
 
-        VexmosNET.get().getServer().getPluginManager().registerEvents(new PlayerUpdateListener(VexmosNET.get(), new ConnectSpigot()), VexmosNET.get());
+        VexmosNET.get().getServer().getPluginManager().registerEvents(new PlayerUpdateListener(new ConnectSpigot()), VexmosNET.get());
 
         // Registrar outros listeners
         VexmosNET.get().getServer().getPluginManager().registerEvents(new ExploitPreventionListener(), VexmosNET.get());

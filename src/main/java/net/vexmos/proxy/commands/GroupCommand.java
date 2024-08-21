@@ -5,6 +5,7 @@ import net.vexmos.database.bungee.ConnectBungee;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
+import net.vexmos.proxy.configs.PermissionConfig;
 
 import java.util.*;
 
@@ -57,6 +58,7 @@ public class GroupCommand extends Commands {
 
     @Override
     public void perform(CommandSender sender, String[] args) {
+        PermissionConfig perm = new PermissionConfig();
         if (!hasRequiredPermission(sender)) {
             sender.sendMessage(new TextComponent("§cVocê não tem permissão para isso."));
             return;
@@ -81,6 +83,7 @@ public class GroupCommand extends Commands {
             if (target == null) {
                 database.setPlayerGroup(playerzinho, group);
                 sender.sendMessage(new TextComponent("§cO jogador está offline, esteja ciente."));
+
                 sender.sendMessage(new TextComponent("§aO grupo de " + playerzinho + " foi atualizado para " + groupMap.get(group) + "."));
                 return;
             }

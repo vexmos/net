@@ -12,7 +12,6 @@ public class PermissionConfig {
         new PermissionAPI();
         perm.saveDefault();
         perm.saveDefaultConfig();
-        perm.reloadConfig();
     }
 
 }
